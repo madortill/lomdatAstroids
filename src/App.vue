@@ -1,23 +1,30 @@
 <template>
   <div id="app">
-    <opening-page @start="start"></opening-page>
+    <opening-page @start="isStart === true"></opening-page>
+    <subjects-map v-if="isStart"></subjects-map>
   </div>
    
 
 </template>
 
 <script>
-import OpeningPage from "@/components/OpeningPage.vue ";
+import OpeningPage from "./components/OpeningPage.vue ";
+import SubjectsMap from "./components/SubjectsMap.vue ";
 export default {
   name: "app",
   data() {
     return {
-      
+      isStart: false,
     };
   },
   components: {
-    OpeningPage
+    OpeningPage,
+    SubjectsMap
+    
   },
+  methods: {
+  
+  }
 }
 </script>
 
