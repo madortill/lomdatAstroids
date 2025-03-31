@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import OpeningPage from "@/components/OpeningPage.vue";
+import OpeningPage from "@/components/OpeningPage.vue ";
 export default {
   name: "app",
   data() {
