@@ -8,20 +8,21 @@
 </template>
 
 <script>
-import OpeningPage from "./components/OpeningPage.vue ";
+
 import SubjectsMap from "./components/SubjectsMap.vue ";
+import OpeningPage from './components/OpeningPage.vue';
 export default {
   name: "app",
+  components: {
+    OpeningPage,
+    SubjectsMap
+  },
   data() {
     return {
       isStart: false,
     };
   },
-  components: {
-    OpeningPage,
-    SubjectsMap
-    
-  },
+
   methods: {
   
   }
