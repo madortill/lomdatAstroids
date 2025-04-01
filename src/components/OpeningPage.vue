@@ -22,9 +22,7 @@
   };
 </script>
 <style scoped>
-    html {
-	Font-size: calc(10px + 0.5vw);
-}
+  
 
 @font-face {
   font-family: "abraham";
@@ -33,7 +31,7 @@
 .title {
   font-family: "abraham";
   color: white;
-  font-size: 2.9rem;
+  font-size: 3rem;
   position: absolute;
   text-align: center;
   width: 20rem;

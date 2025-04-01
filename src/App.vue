@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <opening-page @start="isStart === true"></opening-page>
+    <opening-page @start="start"></opening-page>
     <subjects-map v-if="isStart"></subjects-map>
   </div>
    
@@ -24,12 +24,14 @@ export default {
   },
 
   methods: {
-  
+    start() {
+      this.isStart = true;
+    }
   }
 }
 </script>
 
-<style scoped>
+<style >
 #app {
   background-size: 100vw 100vh;
   height: 100vh;
@@ -39,6 +41,9 @@ export default {
   direction: rtl;
   overflow: hidden;
   background-image: url("./assets/media/Artboard 1.svg");
+}
+html {
+	Font-size: calc(10px + 0.5vw);
 }
 
 
