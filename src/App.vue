@@ -9,8 +9,8 @@
 
 <script>
 
-import SubjectsMap from '@/components/SubjectsMap.vue';
-import OpeningPage from './components/OpeningPage.vue';
+import SubjectsMap from '@/components/subjectsMap.vue';
+import OpeningPage from '@/components/OpeningPage.vue';
 export default {
   name: "app",
   components: {
