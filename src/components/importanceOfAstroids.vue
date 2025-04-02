@@ -42,18 +42,13 @@
         width: 20rem;
         padding: 6rem 2rem ;
         border-radius: 4rem;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         z-index: 1;
         line-height: 1.3;
     }
     .closeBtn {
-        z-index: 2;
-        position: absolute;
-        top: 23%;
-        left: 73%;
+        position: relative;
+        top: 7.5rem;
+        right: 1.7rem;
     }
   
   

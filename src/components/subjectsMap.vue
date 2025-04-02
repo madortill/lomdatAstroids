@@ -1,7 +1,7 @@
 <template>
     <div id="subjects-map">
         <astroid-page  v-if="page === 1 || page === 2" :num="page" @map="backToMap"></astroid-page>
-        <importance-of-astroids v-if="!isClosed" @close="closeInfo"></importance-of-astroids>
+        <importance-of-astroids v-if="!isClosed" id="importanceof-astroids" @close="closeInfo"></importance-of-astroids>
             <div v-if="page === 0" class="subjects">
                 <p class="title">מפת נושאים</p>
                 <div class="img img1"><p id="astroid1" class="astroid astroid1" @click="nextPage">מהו אסטרואיד</p></div>
@@ -158,8 +158,12 @@ export default {
     padding: 7rem 3.4rem;
     border-radius: 8rem;
 }
-importance-of-astroids {
-    position: absolute;
+#importanceof-astroids {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
 }
 
 @media (max-width: 320px) {

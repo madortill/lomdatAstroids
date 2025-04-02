@@ -1,38 +1,83 @@
 <template>
     <div id="astroids-types">
+        <astroids-types-info v-if="isOpen" id="astroids-types-info" :type="type" @close="closeInfo"></astroids-types-info>
         <img src="@/assets/media/backToMap.png" class="backToMap" @click="backToMap" alt="">
         <div class="text">
             <p class="main-title">סוגי אסטרואידים</p>
             <p class="sub-title">קיימים שלושה סוגים של אסטרואידים</p>
             <p class="microcopy">לחצו על האסטרואידים!</p>
         </div>
-        <div class="astroids">
-            <div>
-                
+        <div class="astroids" @click="openInfo">
+            <div class="astroidBaby">
+                <img :src="isPressedBaby ? imgBabyAfter : imgBaby" id="astroidBaby" class="img" alt="babyAstroidImg">
+                <p class="babyText">אסטרואיד בייבי</p>
             </div>
-            <img src="" alt="">
-            
-
+            <div class="astroidTeen">
+                <img :src="isPressedTeen ? imgTeenAfter : imgTeen" id="astroidTeen" class="img" alt="babyAstroidImg">
+                <p class="teenText">אסטרואיד נער מתבגר</p>
+            </div>
+            <div class="astroidAdult">
+                <img :src="isPressedAdult ? imgAdultAfter : imgAdult" id="astroidAdult" class="img" alt="babyAstroidImg">
+                <p class="adultText">אסטרואיד בוגר</p>
+            </div>
         </div>
+        <img v-show="isNext" src="@/assets/media/next.svg" class="next" @click="next" alt="">
     </div>
      
   
   </template>
   
   <script>
+import AstroidsTypesInfo from '@/components/AstroidsTypesInfo.vue';
   export default {
     name: "astroids-types",
+    components: {
+        AstroidsTypesInfo,
+    },
     data() {
       return{
-
+        type: '',
+        isOpen: false,
+        isNext: false,
+        count: 0,
+        isPressedBaby: false,
+        isPressedTeen: false,
+        isPressedAdult: false,
+        imgBaby: "src/assets/media/astroidsTypes/babyAstroid.svg",
+        imgBabyAfter: "src/assets/media/astroidsTypes/babyAfter.svg",
+        imgTeen: "src/assets/media/astroidsTypes/teenAstroid.svg",
+        imgTeenAfter: "src/assets/media/astroidsTypes/teenAfter.svg",
+        imgAdult: "src/assets/media/astroidsTypes/adultAstroid.svg",
+        imgAdultAfter: "src/assets/media/astroidsTypes/adultAfter.svg",
       };
     },
     methods: {
         backToMap() {
             this.$emit("map");
-        }
+        },
+        openInfo(event) {
+            if(event.target.tagName === "IMG") {
+                this.isOpen = true;
+                this.type = event.target.id;
+                this.count++
+            }
+        },
+        closeInfo() {
+            this.isOpen = false;
+            if (this.type === "astroidBaby") {
+                    this.isPressedBaby = true;
+                } else if(this.type === "astroidTeen") {
+                    this.isPressedTeen = true;
+                } else {
+                    this.isPressedAdult = true;
+                }
+                if(this.count >= 3) {
+                    this.isNext = true;
+                }
+        },
     }
 }
+
   </script>
 
   <style scoped>
@@ -77,6 +122,48 @@
         margin-top: 0.5rem;
         transform: rotate(7deg);
         margin-left: 13rem;
-
     }
+    .astroids {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+        font-family: "rubik";
+    }
+    .astroidBaby {
+        margin-right: 17rem;
+    }
+    .astroidTeen {
+        margin-left: 17rem;
+        margin-top: -2rem;
+    }
+    .astroidAdult {
+        margin-right: 12rem;
+        margin-top: -2rem;
+    }
+    .babyText {
+        margin: auto;
+    }
+    .teenText {
+        margin: auto;
+    }
+    .adultText {
+        margin: auto;
+    }
+    #astroids-types-info {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        z-index: 1;
+    }
+    .next {
+        display: inline;
+        margin-right: 1%;
+        margin-top: -10rem;
+    }
+   
     </style>
