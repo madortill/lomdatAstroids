@@ -41,6 +41,8 @@ export default {
   direction: rtl;
   overflow: hidden;
   background-image: url("./assets/media/Artboard 1.svg");
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 html {
 	Font-size: calc(10px + 0.5vw);

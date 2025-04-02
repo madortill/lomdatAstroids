@@ -39,20 +39,21 @@
         color: rgb(0, 0, 0);
         background-color: #A7A7BE;
         text-align: center;
-        top: 15rem;
-        left: 5rem;
-        width: 60%;
-        padding: 7rem 2rem ;
+        width: 20rem;
+        padding: 6rem 2rem ;
         border-radius: 4rem;
         position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         z-index: 1;
         line-height: 1.3;
     }
     .closeBtn {
         z-index: 2;
         position: absolute;
-        top: 18.5rem;
-        right: 6rem;
+        top: 23%;
+        left: 73%;
     }
   
   

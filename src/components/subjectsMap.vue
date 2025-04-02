@@ -7,7 +7,7 @@
                 <div class="img img1"><p id="astroid1" class="astroid astroid1" @click="nextPage">מהו אסטרואיד</p></div>
                 <div class="img img2"><p id="astroid2" class="astroid astroid2" @click="nextPage">סוגי אסטרואידים</p></div>
                 <div class="img img3"><p id="astroid3" class="astroid astroid3" @click="nextPage">קורדינאטות</p></div>
-                <div class="img img4"> <p class="astroid astroid4" @click="nextPage">המשימה הסופית</p></div>
+                <div class="img img4"><p id="astroid4" class="astroid astroid4" @click="nextPage">המשימה הסופית</p></div>
             
                 <!-- <img src="@/assets/media/subjectMap/subj1.svg" alt="astroid1">
                 <img src="@/assets/media/subjectMap/subj2.svg" alt="">
@@ -51,13 +51,14 @@ export default {
         this.isClosed = true;
       },
       nextPage(event) {
-
         if(event.target.id === "astroid1") {
             this.page = 1;
         } else if (event.target.id === "astroid2") {
             this.page = 2;
         } else if (event.target.id === "astroid3") {
             this.page = 3;
+        } else {
+            this.page = 4;
         }
       },
       backToMap() {
@@ -68,13 +69,13 @@ export default {
 </script>
 
 <style scoped>
-
+/* 
 #subjects-map {
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
   
-}
+} */
 .img {
     width: 35rem;  /* Or any other width based on your design */
     height: 30rem;  /* Adjust as needed */
@@ -158,8 +159,7 @@ export default {
     border-radius: 8rem;
 }
 importance-of-astroids {
-    display: flex;
-    align-items: center;
+    position: absolute;
 }
 
 @media (max-width: 320px) {

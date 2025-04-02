@@ -33,12 +33,14 @@
   </script>
 
   <style scoped>
-    .bla {
-        color: rgb(9, 255, 0);
-        font-size: 3rem;
+    #astroid-info {
+       
     }
+
     .backToMap {
-        width: 13rem;
+        width: 10rem;
+        position: fixed;
+        top: 0.1rem;
 
     }
     @font-face {
@@ -53,6 +55,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 6rem;
+
 
     }
     .title {
@@ -74,5 +78,6 @@
     .next {
         display: inline;
         margin-right: 1%;
+        margin-top: 4rem;
     }
     </style>
