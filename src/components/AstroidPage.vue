@@ -1,7 +1,7 @@
 <template>
     <div id="astroid-page">
-        <astroid-info v-if="num === 1" @map="backToMap"></astroid-info>
-        <astroids-types v-if="num === 2"></astroids-types>
+        <astroid-info v-if="num === 1" @map="backToMap" @next-page="num = 2"></astroid-info>
+        <astroids-types v-if="num === 2" @map="backToMap"></astroids-types>
     </div>
      
   

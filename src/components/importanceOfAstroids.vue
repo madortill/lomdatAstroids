@@ -1,7 +1,10 @@
 <template>
     <div id="importance-of-astroids">
-        <img src="@/assets/media/subjectMap/closeIcon.svg" class="closeBtn" @click="closeInfo" alt="">
-        <p class="text">שיעור פיצוץ אסטרואיד חשוב מפני הסכנה התמידית שנשקפת לכדור הארץ. עשרות אלפי אסטרואידים נעים ברגעים אלו לכדור הארץ שלנו ועליכם לדעת כיצד לעצור אותם.</p>
+        
+        <div class="importance">
+            <img src="@/assets/media/subjectMap/closeIcon.svg" class="closeBtn" @click="closeInfo" alt="">
+            <p class="text">שיעור פיצוץ אסטרואיד חשוב מפני הסכנה התמידית שנשקפת לכדור הארץ. עשרות אלפי אסטרואידים נעים ברגעים אלו לכדור הארץ שלנו ועליכם לדעת כיצד לעצור אותם.</p>
+        </div>
     </div>
      
   
@@ -25,7 +28,7 @@
   }
   </script>
   
-  <style >
+  <style scoped>
   @font-face {
   font-family: "rubik";
   src: url("./assets/Rubik-Regular.ttf");
@@ -38,7 +41,7 @@
         text-align: center;
         top: 15rem;
         left: 5rem;
-        width: 25rem;
+        width: 60%;
         padding: 7rem 2rem ;
         border-radius: 4rem;
         position: absolute;
@@ -48,8 +51,8 @@
     .closeBtn {
         z-index: 2;
         position: absolute;
-        top: 19rem;
-       right: 6.1rem;
+        top: 18.5rem;
+        right: 6rem;
     }
   
   

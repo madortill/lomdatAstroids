@@ -1,6 +1,12 @@
 <template>
     <div id="astroid-info">
         <img src="@/assets/media/backToMap.png" class="backToMap" @click="backToMap" alt="">
+        <div id="info">
+            <p class="title">אז מהו אסטרואיד?</p>
+            <p class="text">אסטרואיד הוא יצור מרושע שמטרתו להשמיד את כדור הארץ ואנחנו בברוגז איתו, ממש. הוא נראה כמו כדור עגול כזה אבל לא חלק כי יש לו בליטות ממש מכוערות שנראות כמו חצ'קונים.</p>
+            <img src="@/assets/media/astroidInfo/astroid.svg" class="imgAstroid" alt="">
+        </div>
+        <img src="@/assets/media/next.svg" class="next" @click="next" alt="">
     </div>
      
   
@@ -9,6 +15,7 @@
   <script>
   export default {
     name: "astroid-info",
+    props: ["next"],
     data() {
       return{
      
@@ -17,6 +24,9 @@
     methods: {
         backToMap() {
             this.$emit("map");
+        },
+        next() {
+            this.$emit("next-page")
         }
     }
 }
@@ -30,5 +40,39 @@
     .backToMap {
         width: 13rem;
 
+    }
+    @font-face {
+        font-family: "rubik";
+        src: url("./assets/Rubik-Regular.ttf");
+    }
+    @font-face {
+        font-family: "abraham";
+        src: url("./assets/Abraham-Regular.ttf");
+    }
+    #info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .title {
+        font-family: "abraham";
+        color: white;
+        text-align: center;
+        font-size: 2.5rem;
+    }
+    .text {
+        font-family: "rubik";
+        color: white;
+        text-align: center;
+        width: 20rem;
+        font-size: 2rem;
+    }
+    .imgAstroid {
+        padding-top: 2rem;
+    }
+    .next {
+        display: inline;
+        margin-right: 1%;
     }
     </style>

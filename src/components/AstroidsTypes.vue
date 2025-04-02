@@ -1,6 +1,7 @@
 <template>
     <div id="astroids-types">
         <img src="@/assets/media/backToMap.png" class="backToMap" @click="backToMap" alt="">
+        <p class="bla">fhgfjyhgjh</p>
     </div>
      
   

@@ -7,7 +7,7 @@
                 <div class="img img1"><p id="astroid1" class="astroid astroid1" @click="nextPage">מהו אסטרואיד</p></div>
                 <div class="img img2"><p id="astroid2" class="astroid astroid2" @click="nextPage">סוגי אסטרואידים</p></div>
                 <div class="img img3"><p id="astroid3" class="astroid astroid3" @click="nextPage">קורדינאטות</p></div>
-                <div class="img img4">hgfh</div>
+                <div class="img img4"> <p class="astroid astroid4" @click="nextPage">המשימה הסופית</p></div>
             
                 <!-- <img src="@/assets/media/subjectMap/subj1.svg" alt="astroid1">
                 <img src="@/assets/media/subjectMap/subj2.svg" alt="">
@@ -76,8 +76,10 @@ export default {
   
 }
 .img {
-    width: 30rem;
-    height: 30rem;
+    width: 35rem;  /* Or any other width based on your design */
+    height: 30rem;  /* Adjust as needed */
+    margin: 0;  /* Remove margin to bring images closer */
+    padding: 0;  /* Remove padding */
     color: white;
 
 }
@@ -99,14 +101,12 @@ export default {
     background-size: 100% 100%;
 }
 .subjects {
-    position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: left;
-    text-align: center;
+    flex-direction: column;  
+    justify-content: center;  
+    align-items: center; 
     width: 100%;
-    height: 100%;
-    align-items: center;
+    height: auto;
 
 }
 @font-face {
@@ -116,43 +116,94 @@ export default {
 .title {
     font-family: "abraham";
     color: white;
-    position: relative;
-    font-size: 3rem;
+    font-size: 4.5rem;
 }
 .astroid {
     color: white;
     font-family: "abraham";
-    background-color: rgba(0, 255, 255, 0.363);
-    width: 10rem;
-    padding: 1rem;
-    
+    width: 13rem; 
+    margin: 0.1rem; 
+    text-align: center;
 }
 .astroid1 {
     position: relative;
-    top: 2rem;
-    right: 7rem;
-    font-size:1.1rem;
+    top: 6rem;
+    right: 10.5rem;
+    font-size:2rem;
+    padding: 5rem 2rem;
+    border-radius: 5rem;
 }
 .astroid2 {
     position: relative;
-    top: 5rem;
-    right: 3.5rem;
-    font-size:1rem;
+    top: 12rem;
+    right: 3rem;
+    font-size:2rem;
+    padding: 4.5rem 1.3rem;
+    border-radius: 7rem;
 }
 .astroid3 {
     position: relative;
-    top: 1rem;
-    right: 9rem;
-    font-size:1.5rem;
+    top: 6.7rem;
+    right: 19rem;
+    font-size:2.3rem;
+    padding: 5rem 1.3rem;
+    border-radius: 6rem;
+}
+.astroid4 {
+    position: relative;
+    top: 4.5rem;
+    right: 2.4rem;
+    font-size:3rem;
+    padding: 7rem 3.4rem;
+    border-radius: 8rem;
 }
 importance-of-astroids {
-    z-index: 3;
-    position: absolute;
+    display: flex;
+    align-items: center;
 }
-@media (max-width: 250px) {
+
+@media (max-width: 320px) {
   .title {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
+  .img {
+    width: 30rem;
+    height: 25rem;
+  }
+  .astroid {
+    width: 12rem;
+    
+    margin: 0.1rem; 
+    text-align: center;
+}
+.astroid1 {
+    position: relative;
+    top: 4.2rem;
+    right: 9rem;
+    font-size:2rem;
+    padding: 5rem 1.4rem;
+    border-radius: 6rem;
+}
+.astroid2 {
+    top: 9.5rem;
+    right: 1.8rem;
+    font-size:2rem;
+    padding: 3rem 1rem;
+    border-radius: 10rem;
+}
+.astroid3 {
+    top: 5.5rem;
+    right: 16rem;
+    font-size:2rem;
+    padding: 4rem 1rem;
+}
+.astroid4 {
+    top: 3.5rem;
+    right: 1rem;
+    font-size:3rem;
+    padding: 5.5rem 3.4rem;
+    border-radius: 8rem;
+}
 }
 
 </style>

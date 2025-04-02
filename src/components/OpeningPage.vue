@@ -23,7 +23,6 @@
 </script>
 <style scoped>
   
-
 @font-face {
   font-family: "abraham";
   src: url("./assets/Abraham-Regular.ttf");
@@ -31,7 +30,7 @@
 .title {
   font-family: "abraham";
   color: white;
-  font-size: 3rem;
+  font-size: 4rem;
   position: absolute;
   text-align: center;
   width: 20rem;
@@ -40,22 +39,21 @@
   transform: translateX(50%);
 }
 .rocket {
-  width: 15rem;
   position: absolute;
   right: 40%;
-  top: 15rem;
+  top: 20rem;
   transform: translateX(50%);
 
 }
 @keyframes rocket{
   0% {
-    width: 15rem;
+    width: 60%;
   }
   50% {
-    width: 18rem;
+    width: 65%;
   }
   100% {
-    width: 15rem;
+    width: 60%;
   }
 }
 .rocket {
