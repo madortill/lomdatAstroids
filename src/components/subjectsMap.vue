@@ -1,7 +1,7 @@
 <template>
     <div id="subjects-map">
         <astroid-page  v-if="page === 1 || page === 2" :num="page" @map="backToMap"></astroid-page>
-        <importance-of-astroids v-if="!isClosed" id="importanceof-astroids" @close="closeInfo"></importance-of-astroids>
+        <ImportanceOfAstroids v-if="!isClosed" id="importanceof-astroids" @close="closeInfo"></ImportanceOfAstroids>
             <div v-if="page === 0" class="subjects">
                 <p class="title">מפת נושאים</p>
                 <div class="img img1"><p id="astroid1" class="astroid astroid1" @click="nextPage">מהו אסטרואיד</p></div>
