@@ -14,7 +14,7 @@
             </div>
             <div v-show="type === 'astroidAdult'">
                 <p class="title">אסטרואיד בוגר</p>
-                <p class="text">אסטרואיד ממש גדול שיכול להשמיד את כל כדור הארץ</p>
+                <p class="text">אסטרואיד ממש גדול שיכול להשמיד את כל כדור הארץ </p>
                 <img src="@/assets/media/astroidsTypes/adultAstroid.svg" id="astroidAdult" class="img" alt="babyAstroidImg">
             </div>
             
