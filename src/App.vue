@@ -8,7 +8,7 @@
 </template>
 
 <script>
-
+// import Loader from '@/components/Loader.vue';
 import SubjectsMap from '@/components/subjectsMap.vue';
 import OpeningPage from '@/components/OpeningPage.vue';
 export default {

@@ -43,12 +43,12 @@ import AstroidsTypesInfo from '@/components/AstroidsTypesInfo.vue';
         isPressedBaby: false,
         isPressedTeen: false,
         isPressedAdult: false,
-        imgBaby: "src/assets/media/astroidsTypes/babyAstroid.svg",
-        imgBabyAfter: "src/assets/media/astroidsTypes/babyAfter.svg",
-        imgTeen: "src/assets/media/astroidsTypes/teenAstroid.svg",
-        imgTeenAfter: "src/assets/media/astroidsTypes/teenAfter.svg",
-        imgAdult: "src/assets/media/astroidsTypes/adultAstroid.svg",
-        imgAdultAfter: "src/assets/media/astroidsTypes/adultAfter.svg",
+        imgBaby: "../public/astroidsTypes/babyAstroid.svg",
+        imgBabyAfter: "../public/astroidsTypes/babyAfter.svg",
+        imgTeen: "../public/astroidsTypes/teenAstroid.svg",
+        imgTeenAfter: "../public/astroidsTypes/teenAfter.svg",
+        imgAdult: "../public/astroidsTypes/adultAstroid.svg",
+        imgAdultAfter: "../public/astroidsTypes/adultAfter.svg",
       };
     },
     methods: {
