@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import ImportanceOfAstroids from '@/components/ImportanceOfAstroids.vue';
+import ImportanceOfAstroids from '@/components/importanceOfAstroids.vue';
 import AstroidPage from '@/components/AstroidPage.vue';
 export default {
     name: "app",
