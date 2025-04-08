@@ -65,6 +65,14 @@ export default {
 html {
 	Font-size: calc(10px + 0.5vw);
 }
+@font-face {
+        font-family: "rubik";
+        src: url("./assets/Rubik-Regular.ttf");
+    }
+    @font-face {
+        font-family: "abraham";
+        src: url("./assets/Abraham-Regular.ttf");
+    }
 
 
 

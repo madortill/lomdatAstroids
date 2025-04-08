@@ -23,10 +23,6 @@
 </script>
 <style scoped>
   
-@font-face {
-  font-family: "abraham";
-  src: url("../assets/Abraham-Regular.ttf");
-}
 .title {
   font-family: "abraham";
   color: white;

@@ -120,14 +120,14 @@ export default {
     height: auto;
 
 }
-@font-face {
+/* @font-face {
   font-family: "abraham";
   src: url("./assets/Abraham-Regular.ttf");
 }
 @font-face {
   font-family: "rubik";
   src: url("./assets/Rubik-Regular.ttf");
-}
+} */
 .title {
     font-family: "abraham";
     color: white;
