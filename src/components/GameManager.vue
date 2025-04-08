@@ -3,11 +3,11 @@
         <div class="board">
             <div class="lifes">
                 <p>מה שנותר מכדור הארץ:</p>
-                <!-- <img src="@/assets/media/coordinatesGame/wholeEarth.svg" class="img" alt="wholeEarth"> -->
-                <!-- <img src="@/assets/media/coordinatesgame/lesswholeEarth.svg" class="img" alt="LesswholeEarth"> -->
-                <!-- <img src="@/assets/media/coordinatesGame/littleFromEarth.svg" class="img" alt="littleFromEarth"> -->
+                <img src="@/assets/media/coordinatesgame/wholeEarth.svg" class="img" alt="wholeEarth">
+                <img src="@/assets/media/coordinatesgame/lesswholeEarth.svg" class="img" alt="LesswholeEarth">
+                <img src="@/assets/media/coordinatesgame/littleFromEarth.svg" class="img" alt="littleFromEarth">
             </div>
-            <img src="@/assets/media/coordinatesGame/board.svg" class="boardImg" alt="board">
+            <img src="@/assets/media/coordinatesgame/board.svg" class="boardImg" alt="board">
             <div class="astroids-count">
                 <p>אסטואידים שפוצצו</p>
                 <p class="count">{{ numOfAstroids }}/5</p>
@@ -17,7 +17,7 @@
                 <!-- <p v-for="(coordinate, index) in coordinatesArr" :key="index" class="bla">
                     {{ coordinate[index] }}
                 </p> -->
-                <img src="@/assets/media/coordinatesGame/astroid.svg" alt="">
+                <img src="@/assets/media/coordinatesgame/astroid.svg" alt="">
             </div>
             
          </div>
