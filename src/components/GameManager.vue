@@ -7,16 +7,6 @@
                 <img src="@/assets/media/coordinatesGame/lesswholeEarth.svg" class="img" alt="LesswholeEarth">
                 <img src="@/assets/media/coordinatesGame/littleFromEarth.svg" class="img" alt="littleFromEarth">
             </div>
-            <!-- <div class="targets-container">
-                <div class="targets"></div>
-                <div class="targets"></div>
-                <div class="targets"></div>
-                <div class="targets"></div>
-                <div class="targets"></div>
-                <div class="targets"></div>
-                <div class="targets"></div>
-                <div class="targets"></div>
-            </div> -->
             <img src="@/assets/media/coordinatesGame/board.svg" class="boardImg" alt="board">
             <div class="astroids-count">
                 <p>אסטואידים שפוצצו</p>
