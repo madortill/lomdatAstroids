@@ -38,7 +38,6 @@
   </template>
   
   <script>
-import Coordinates from './coordinates.vue';
 
   export default {
     name: "game-manager",
