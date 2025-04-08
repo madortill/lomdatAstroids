@@ -2,7 +2,7 @@
     <div id="decision-screen">
         <div class="content">
             <p class="text">אוי לא! אסטרואידים מתקרבים במהירות לכדור הארץ! מקווים מאוד שלמדתם כמו שצריך כי אתם היחידים שיכולים לעצור אותם!</p>
-            <p class="btn" @click="showInstructions">למשימה!</p>
+            <p class="btn" @click="MoveTo">למשימה!</p>
         </div>
        
     </div>
@@ -19,8 +19,8 @@
 
     },
     methods: {
-        showInstructions() {
-            this.$emit("open-instruction");
+        MoveTo() {
+            this.$emit("MoveTo");
         }
     }
 }

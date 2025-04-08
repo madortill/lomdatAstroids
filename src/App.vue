@@ -33,7 +33,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.isLoader = false
-    }, 1000)
+    }, 4000)
   },
 
   methods: {
@@ -42,7 +42,7 @@ export default {
       setTimeout(() => {
         this.isAnimation = false;
         this.isStart = true;
-    }, 1000)
+    }, 5300)
 
     }
   }
@@ -72,7 +72,6 @@ html {
     @font-face {
         font-family: "abraham";
         src: url("./assets/Abraham-Regular.ttf"),
-             url("@/assets/Abraham-Regular.woff") format("woff"),
     }
 
 

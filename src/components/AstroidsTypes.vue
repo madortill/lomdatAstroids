@@ -144,11 +144,11 @@ import AstroidsTypesExercise from '@/components/AstroidsTypesExercise.vue';
     }
     .astroidTeen {
         margin-left: 17rem;
-        margin-top: -10rem;
+        margin-top: -4rem;
     }
     .astroidAdult {
         margin-right: 12rem;
-        margin-top: -4rem;
+        margin-top: -3rem;
     }
     .babyText {
         margin: auto;

@@ -1,7 +1,8 @@
 <template>
-    <div id="coordinatesGame">
-        <decision-screen v-if="isReady" @open-instruction="openInstruction"></decision-screen>
-        <!-- <instructions></instructions> -->
+    <div id="coordinates-game">
+        <decision-screen v-if="isReady" @MoveTo="moveToGame"></decision-screen>
+        <game-manager v-if="isClose && !isReady"></game-manager>
+        <instructions v-if="!isClose && !isReady" class="instructions" @close="closeInstructions"></instructions>
     </div>
        
         
@@ -9,22 +10,28 @@
   
   <script>
   import DecisionScreen from '@/components/DecisionScreen.vue';
-//   import Instructions from '@/components/Instructions.vue';
+  import GameManager from '@/components/GameManager.vue';
+  import Instructions from '@/components/Instructions.vue';
+
   export default {
-    name: "coordinatesGame",
+    name: "coordinates-game",
     components: {
         DecisionScreen,
-        // Instructions
+        GameManager,
+        Instructions
     },
     data() {
         return {
             isReady: true,
-            isClosed: true,
+            isClose: false,
         };
     },
     methods: {
-        openInstruction() {
+        moveToGame() {
             this.isReady = false;
+        },
+        closeInstructions() {
+            this.isClose = true;
         }
     }
 }
@@ -39,14 +46,14 @@
         font-family: "rubik";
         src: url("./assets/Rubik-Regular.ttf");
     }
-    .cover {
-      background-color: rgba(0, 0, 0, 0.438);
-      background-size: 100vw 100vh;
-      height: 100vh;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-
+    
+    .instructions {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
     }
+
     
     </style>

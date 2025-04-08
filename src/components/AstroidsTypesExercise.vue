@@ -25,7 +25,6 @@
                 <p class="sentence">יכול להשמיד את כדור הארץ</p>
                 <p class="sentence">הורס שכונות מקומיות</p>
             </div>
-            <img src="@/assets/media/backBtn.svg" class="back" @click="backMap" alt="">
         </div>
         <!-- <img src="@/assets/media/back.svg"  alt=""> -->
         
