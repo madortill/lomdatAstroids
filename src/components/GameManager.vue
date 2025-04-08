@@ -4,7 +4,7 @@
             <div class="lifes">
                 <p>מה שנותר מכדור הארץ:</p>
                 <img src="@/assets/media/coordinatesgame/wholeEarth.svg" class="img" alt="wholeEarth">
-                <img src="@/assets/media/coordinatesgame/lesswholeEarth.svg" class="img" alt="LesswholeEarth">
+                <img src="@/assets/media/coordinatesgame/lessWholeEarth.svg" class="img" alt="LesswholeEarth">
                 <img src="@/assets/media/coordinatesgame/littleFromEarth.svg" class="img" alt="littleFromEarth">
             </div>
             <img src="@/assets/media/coordinatesgame/board.svg" class="boardImg" alt="board">
