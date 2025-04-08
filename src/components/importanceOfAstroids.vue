@@ -28,10 +28,11 @@
   </script>
   
   <style scoped>
-  /* @font-face {
+  @font-face {
   font-family: "rubik";
-  src: url("./assets/Rubik-Regular.ttf");
-} */
+  src: url("./assets/Rubik-Regular.ttf"),
+       
+}
     .text {
         font-family: "rubik";
         font-size: 2.3rem;

@@ -71,7 +71,8 @@ html {
     }
     @font-face {
         font-family: "abraham";
-        src: url("./assets/Abraham-Regular.ttf");
+        src: url("./assets/Abraham-Regular.ttf"),
+             url("@/assets/Abraham-Regular.woff") format("woff"),
     }
 
 
