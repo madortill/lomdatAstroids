@@ -3,17 +3,20 @@
         <img v-show="(page !== 0) && (page !== 4)" src="@/assets/media/backToMap.png" class="backToMap" @click="page = 0" alt="">
         <astroid-page  v-if="page === 1 || page === 2" :num="page" @toMap="backToMap"></astroid-page>
         <coordinates v-if="page === 3" @toMap="backToMap"></coordinates>
+        <coordinates-game v-if="page === 4"></coordinates-game>
         <ImportanceOfAstroids v-if="!isClosed" id="importanceof-astroids" @close="closeInfo"></ImportanceOfAstroids>
+        <div v-if="!isClosed" class="cover"></div>
             <div v-if="page === 0" class="subjects">
                 <p class="title">מפת נושאים</p>
                 <p class="title2">לחצו!</p>
-                <div v-for="(text, index) in subjects" :key="index" :class="'img img' + (index + 1)">
-                    <p :id="'astroid' + (index + 1)" 
+                <div v-for="(text, index) in subjects" :key="index" :id="index"  :class="['img', 'img' + (index + 1), enableArr[index] ? 'abled' : 'disabled']">
+                    <p :id="(index)"
                     :class="'astroid astroid' + (index + 1)"
                     @click="nextPage">
                     {{ text }}
                     </p>
                 </div>
+                
             </div>
            
        
@@ -25,19 +28,24 @@
 import ImportanceOfAstroids from '@/components/importanceOfAstroids.vue';
 import AstroidPage from '@/components/AstroidPage.vue';
 import Coordinates from '@/components/Coordinates.vue';
+import CoordinatesGame from '@/components/CoordinatesGame.vue';
 export default {
     name: "app",
     components: {
         AstroidPage,
         ImportanceOfAstroids,
-        Coordinates
+        Coordinates,
+        CoordinatesGame
+
     },
     data() {
       return{
         isStart: false,
+        // isClicked: false,
         page: 0,
         isClosed: false,
         subjects: ["מהו אסטרואיד", "סוגי אסטרואידים", "קורדינאטות", "המשימה הסופית"],
+        enableArr: [true, false, false, false]
       };
     },
     methods: {
@@ -49,14 +57,19 @@ export default {
         this.isClosed = true;
       },
       nextPage(event) {
-        if(event.target.id === "astroid1") {
+        if(this.enableArr[event.target.id])
+        if(event.target.id === "0") {
             this.page = 1;
-        } else if (event.target.id === "astroid2") {
+            this.enableArr[Number(event.target.id) + 1] = true;
+        } else if (event.target.id === "1") {
             this.page = 2;
-        } else if (event.target.id === "astroid3") {
+            this.enableArr[Number(event.target.id) + 1] = true;
+        } else if (event.target.id === "2") {
             this.page = 3;
+            this.enableArr[Number(event.target.id) + 1] = true;
         } else {
             this.page = 4;
+            this.enableArr[Number(event.target.id) + 1] = true;
         }
       },
       backToMap() {
@@ -172,6 +185,20 @@ export default {
         transform: translate(-50%, -50%);
         z-index: 2;
 }
+.abled {
+  opacity: 100%;
+}
+.disabled {
+  opacity: 75%;
+}
+.cover {
+      background-color: rgba(0, 0, 0, 0.438);
+      background-size: 100vw 100vh;
+      height: 100vh;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
 
 @media (max-width: 320px) {
   .title {

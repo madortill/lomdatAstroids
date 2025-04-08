@@ -5,7 +5,6 @@
             <img src="@/assets/media/coordinates/coordinate.svg" class="coordinates" alt="">
             <p class="text">קורדינאטה</p>
             <img src="@/assets/media/coordinates/smokeBubbleText.svg" class="bubble" alt="">
-            <img src="@/assets/media/backBtn.svg" class="back" @click="backMap" alt="">
         </div>
        
         
@@ -56,10 +55,6 @@
         color: white;
         font-size: 2.1rem;
     }
-    .back{
-        margin-top: -5rem;
-        margin-left: 18rem;
-    }
     .text {
         font-family: "rubik";
         color: white;
@@ -86,11 +81,6 @@
         font-size: 1.6rem;
         margin-top: 0.5rem;
         margin-left: 18rem;
-    }
-    .back{
-        margin-top: -3rem;
-        margin-left: 15rem;
-        width: 10rem;
     }
     
     }

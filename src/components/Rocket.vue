@@ -19,7 +19,7 @@
     computed: {
       // Dynamically get the path to the animation HTML file
       animationSrc() {
-        return '/animations/rocket/animation roket.html'; // Adjust to your file location
+        return './animations/rocket/animation roket.html'; // Adjust to your file location
       }
     }
   };

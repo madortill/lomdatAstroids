@@ -5,7 +5,6 @@
             <p class="text">אסטרואיד הוא יצור מרושע שמטרתו להשמיד את כדור הארץ ואנחנו בברוגז איתו, ממש. הוא נראה כמו כדור עגול כזה אבל לא חלק כי יש לו בליטות ממש מכוערות שנראות כמו חצ'קונים.</p>
             <img src="@/assets/media/astroidInfo/astroid.svg" class="imgAstroid" alt="">
         </div>
-        <img src="@/assets/media/next.svg" class="next" @click="next" alt="">
     </div>
      
   

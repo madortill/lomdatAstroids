@@ -1,6 +1,5 @@
 <template>
     <div id="importance-of-astroids">
-        
         <div class="importance">
             <img src="@/assets/media/subjectMap/closeIcon.svg" class="closeBtn" @click="closeInfo" alt="">
             <p class="text">שיעור פיצוץ אסטרואיד חשוב מפני הסכנה התמידית שנשקפת לכדור הארץ. עשרות אלפי אסטרואידים נעים ברגעים אלו לכדור הארץ שלנו ועליכם לדעת כיצד לעצור אותם.</p>
@@ -50,6 +49,7 @@
         top: 7.5rem;
         right: 1.7rem;
     }
+    
   
   
   

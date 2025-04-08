@@ -20,7 +20,7 @@ export default {
   computed: {
     // Dynamically get the path to the animation HTML file
     animationSrc() {
-      return '/animations/loader/RECOVER_gif.html'; // Adjust to your file location
+      return './animations/loader/RECOVER_gif.html'; // Adjust to your file location
     }
   }
 };

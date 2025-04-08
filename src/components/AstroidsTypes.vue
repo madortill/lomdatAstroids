@@ -50,12 +50,12 @@ import AstroidsTypesExercise from '@/components/AstroidsTypesExercise.vue';
         isPressedBaby: false,
         isPressedTeen: false,
         isPressedAdult: false,
-        imgBaby: "/astroidsTypes/babyAstroid.svg",
-        imgBabyAfter: "/astroidsTypes/babyAfter.svg",
-        imgTeen: "/astroidsTypes/teenAstroid.svg",
-        imgTeenAfter: "/astroidsTypes/teenAfter.svg",
-        imgAdult: "/astroidsTypes/adultAstroid.svg",
-        imgAdultAfter: "/astroidsTypes/adultAfter.svg",
+        imgBaby: "./astroidsTypes/babyAstroid.svg",
+        imgBabyAfter: "./astroidsTypes/babyAfter.svg",
+        imgTeen: "./astroidsTypes/teenAstroid.svg",
+        imgTeenAfter: "./astroidsTypes/teenAfter.svg",
+        imgAdult: "./astroidsTypes/adultAstroid.svg",
+        imgAdultAfter: "./astroidsTypes/adultAfter.svg",
       };
     },
     methods: {
@@ -140,14 +140,15 @@ import AstroidsTypesExercise from '@/components/AstroidsTypesExercise.vue';
     }
     .astroidBaby {
         margin-right: 17rem;
+        margin-top: -2rem;
     }
     .astroidTeen {
         margin-left: 17rem;
-        margin-top: -2rem;
+        margin-top: -10rem;
     }
     .astroidAdult {
         margin-right: 12rem;
-        margin-top: -2rem;
+        margin-top: -4rem;
     }
     .babyText {
         margin: auto;
