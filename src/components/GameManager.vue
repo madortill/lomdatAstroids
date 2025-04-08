@@ -4,8 +4,8 @@
             <div class="lifes">
                 <p>מה שנותר מכדור הארץ:</p>
                 <!-- <img src="@/assets/media/coordinatesGame/wholeEarth.svg" class="img" alt="wholeEarth"> -->
-                <img src="@/assets/media/coordinatesGame/lesswholeEarth.svg" class="img" alt="LesswholeEarth">
-                <img src="@/assets/media/coordinatesGame/littleFromEarth.svg" class="img" alt="littleFromEarth">
+                <!-- <img src="@/assets/media/coordinatesgame/lesswholeEarth.svg" class="img" alt="LesswholeEarth"> -->
+                <!-- <img src="@/assets/media/coordinatesGame/littleFromEarth.svg" class="img" alt="littleFromEarth"> -->
             </div>
             <img src="@/assets/media/coordinatesGame/board.svg" class="boardImg" alt="board">
             <div class="astroids-count">
