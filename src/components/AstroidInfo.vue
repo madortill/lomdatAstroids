@@ -1,6 +1,5 @@
 <template>
     <div id="astroid-info">
-        <img src="@/assets/media/backToMap.png" class="backToMap" @click="backToMap" alt="">
         <div id="info">
             <p class="title">אז מהו אסטרואיד?</p>
             <p class="text">אסטרואיד הוא יצור מרושע שמטרתו להשמיד את כדור הארץ ואנחנו בברוגז איתו, ממש. הוא נראה כמו כדור עגול כזה אבל לא חלק כי יש לו בליטות ממש מכוערות שנראות כמו חצ'קונים.</p>
@@ -22,9 +21,6 @@
       };
     },
     methods: {
-        backToMap() {
-            this.$emit("map");
-        },
         next() {
             this.$emit("next-page")
         }
@@ -33,16 +29,6 @@
   </script>
 
   <style scoped>
-    #astroid-info {
-       
-    }
-
-    .backToMap {
-        width: 10rem;
-        position: fixed;
-        top: 0.1rem;
-
-    }
     @font-face {
         font-family: "rubik";
         src: url("./assets/Rubik-Regular.ttf");

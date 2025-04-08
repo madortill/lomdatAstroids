@@ -1,24 +1,19 @@
 <template>
     <div id="subjects-map">
-        <astroid-page  v-if="page === 1 || page === 2" :num="page" @map="backToMap"></astroid-page>
+        <img v-show="(page !== 0) && (page !== 4)" src="@/assets/media/backToMap.png" class="backToMap" @click="page = 0" alt="">
+        <astroid-page  v-if="page === 1 || page === 2" :num="page" @toMap="backToMap"></astroid-page>
+        <coordinates v-if="page === 3" @toMap="backToMap"></coordinates>
         <ImportanceOfAstroids v-if="!isClosed" id="importanceof-astroids" @close="closeInfo"></ImportanceOfAstroids>
             <div v-if="page === 0" class="subjects">
                 <p class="title">מפת נושאים</p>
-                <div class="img img1"><p id="astroid1" class="astroid astroid1" @click="nextPage">מהו אסטרואיד</p></div>
-                <div class="img img2"><p id="astroid2" class="astroid astroid2" @click="nextPage">סוגי אסטרואידים</p></div>
-                <div class="img img3"><p id="astroid3" class="astroid astroid3" @click="nextPage">קורדינאטות</p></div>
-                <div class="img img4"><p id="astroid4" class="astroid astroid4" @click="nextPage">המשימה הסופית </p></div>
-            
-                <!-- <img src="@/assets/media/subjectMap/subj1.svg" alt="astroid1">
-                <img src="@/assets/media/subjectMap/subj2.svg" alt="">
-                <img src="@/assets/media/subjectMap/subj3.svg" alt="">
-                <img src="@/assets/media/subjectMap/subj4.svg" alt=""> -->
-                <!-- <div class="text">
-                
-                
-                <p class="astroid astroid3">קורדינאטות</p>
-                <p class="astroid astroid4">המשימה הסופית</p>
-            </div> -->
+                <p class="title2">לחצו!</p>
+                <div v-for="(text, index) in subjects" :key="index" :class="'img img' + (index + 1)">
+                    <p :id="'astroid' + (index + 1)" 
+                    :class="'astroid astroid' + (index + 1)"
+                    @click="nextPage">
+                    {{ text }}
+                    </p>
+                </div>
             </div>
            
        
@@ -29,17 +24,20 @@
 <script>
 import ImportanceOfAstroids from '@/components/importanceOfAstroids.vue';
 import AstroidPage from '@/components/AstroidPage.vue';
+import Coordinates from '@/components/Coordinates.vue';
 export default {
     name: "app",
     components: {
         AstroidPage,
-        ImportanceOfAstroids
+        ImportanceOfAstroids,
+        Coordinates
     },
     data() {
       return{
         isStart: false,
         page: 0,
         isClosed: false,
+        subjects: ["מהו אסטרואיד", "סוגי אסטרואידים", "קורדינאטות", "המשימה הסופית"],
       };
     },
     methods: {
@@ -69,18 +67,17 @@ export default {
 </script>
 
 <style scoped>
-/* 
-#subjects-map {
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-  
-} */
+.backToMap {
+        width: 10rem;
+        position: fixed;
+        top: 0.1rem;
+
+    }
 .img {
-    width: 35rem;  /* Or any other width based on your design */
-    height: 30rem;  /* Adjust as needed */
-    margin: 0;  /* Remove margin to bring images closer */
-    padding: 0;  /* Remove padding */
+    width: 35rem;  
+    height: 30rem;
+    margin: 0; 
+    padding: 0; 
     color: white;
 
 }
@@ -114,10 +111,20 @@ export default {
   font-family: "abraham";
   src: url("./assets/Abraham-Regular.ttf");
 }
+@font-face {
+  font-family: "rubik";
+  src: url("./assets/Rubik-Regular.ttf");
+}
 .title {
     font-family: "abraham";
     color: white;
     font-size: 4.5rem;
+}
+.title2 {
+    font-family: "rubik";
+    color: white;
+    font-size: 2.3rem;
+    margin-top: -4rem;
 }
 .astroid {
     color: white;
@@ -145,7 +152,7 @@ export default {
 .astroid3 {
     position: relative;
     top: 6.7rem;
-    right: 19rem;
+    right: 18rem;
     font-size:2.3rem;
     padding: 5rem 1.3rem;
     border-radius: 6rem;
@@ -170,6 +177,10 @@ export default {
   .title {
     font-size: 2.8rem;
   }
+  .title2 {
+    font-size: 2rem;
+    margin-top: -2rem;
+}
   .img {
     width: 30rem;
     height: 25rem;

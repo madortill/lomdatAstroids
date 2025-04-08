@@ -1,7 +1,9 @@
 <template>
     <div id="astroids-types">
+        <astroids-types-exercise v-show="page === 2" @toMap="backMap"></astroids-types-exercise>
+        <div v-show="page === 1">
         <astroids-types-info v-if="isOpen" id="astroids-types-info" :type="type" @close="closeInfo"></astroids-types-info>
-        <img src="@/assets/media/backToMap.png" class="backToMap" @click="backToMap" alt="">
+        
         <div class="text">
             <p class="main-title">סוגי אסטרואידים</p>
             <p class="sub-title">קיימים שלושה סוגים של אסטרואידים</p>
@@ -9,19 +11,20 @@
         </div>
         <div class="astroids" @click="openInfo">
             <div class="astroidBaby">
-                <img :src="isPressedBaby ? imgBabyAfter : imgBaby" id="astroidBaby" class="img" alt="babyAstroidImg">
+                <img :src="isPressedBaby ? imgBaby : imgBabyAfter" id="astroidBaby" class="img" alt="babyAstroidImg">
                 <p class="babyText">אסטרואיד בייבי</p>
             </div>
             <div class="astroidTeen">
-                <img :src="isPressedTeen ? imgTeenAfter : imgTeen" id="astroidTeen" class="img" alt="babyAstroidImg">
+                <img :src="isPressedTeen ? imgTeen : imgTeenAfter" id="astroidTeen" class="img" alt="babyAstroidImg">
                 <p class="teenText">אסטרואיד נער מתבגר</p>
             </div>
             <div class="astroidAdult">
-                <img :src="isPressedAdult ? imgAdultAfter : imgAdult" id="astroidAdult" class="img" alt="babyAstroidImg">
+                <img :src="isPressedAdult ? imgAdult : imgAdultAfter" id="astroidAdult" class="img" alt="babyAstroidImg">
                 <p class="adultText">אסטרואיד בוגר</p>
             </div>
         </div>
         <img v-show="isNext" src="@/assets/media/next.svg" class="next" @click="next" alt="">
+        </div>
     </div>
      
   
@@ -29,16 +32,20 @@
   
   <script>
 import AstroidsTypesInfo from '@/components/AstroidsTypesInfo.vue';
+import AstroidsTypesExercise from '@/components/AstroidsTypesExercise.vue';
+
   export default {
     name: "astroids-types",
     components: {
         AstroidsTypesInfo,
+        AstroidsTypesExercise
     },
     data() {
       return{
         type: '',
         isOpen: false,
         isNext: false,
+        page: 1,
         count: 0,
         isPressedBaby: false,
         isPressedTeen: false,
@@ -52,9 +59,6 @@ import AstroidsTypesInfo from '@/components/AstroidsTypesInfo.vue';
       };
     },
     methods: {
-        backToMap() {
-            this.$emit("map");
-        },
         openInfo(event) {
             if(event.target.tagName === "IMG") {
                 this.isOpen = true;
@@ -75,6 +79,12 @@ import AstroidsTypesInfo from '@/components/AstroidsTypesInfo.vue';
                     this.isNext = true;
                 }
         },
+        next() {
+            this.page = 2;
+        },
+        backMap() {
+            this.$emit("toMap");
+        },
     }
 }
 
@@ -82,12 +92,6 @@ import AstroidsTypesInfo from '@/components/AstroidsTypesInfo.vue';
 
   <style scoped>
 
-    .backToMap {
-        width: 10rem;
-        position: fixed;
-        top: 0.1rem;
-
-    }
     @font-face {
         font-family: "rubik";
         src: url("./assets/Rubik-Regular.ttf");
@@ -122,6 +126,7 @@ import AstroidsTypesInfo from '@/components/AstroidsTypesInfo.vue';
         margin-top: 0.5rem;
         transform: rotate(7deg);
         margin-left: 13rem;
+        font-weight: bold;
     }
     .astroids {
         display: flex;

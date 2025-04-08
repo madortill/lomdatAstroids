@@ -1,36 +1,39 @@
 <template>
-    <div class="animate-iframe-container">
+  <div>
+    <!-- Embed the local animation using iframe -->
+     <div class="animation">
       <iframe
-        :src="animateSrc"
-        frameborder="0"
-        width="100%"
-        height="100%"
-        title="first animation"
-      ></iframe>
-    </div>
-  </template>
-  
-  <script>
-  export default {
-    name: "first-animation",
-    data() {
-      return {
-        // Point to the index.html file of your exported Animate project
-        animateSrc: "@/animations/loader/loader.html",
-      };
-    },
-  };
-  </script>
-  
-  <style scoped>
-  .animate-iframe-container {
-    /* width: 100%; */
-    height: 100%; /* Adjust this height as per your needs */
-    width: 100%;
-    position: relative;
+      :src="animationSrc"
+      width="100%" 
+      height="500px"
+      frameborder="0"
+      allowfullscreen
+    ></iframe>
+     </div>
+    
+  </div>
+</template>
+
+<script>
+export default {
+  name: "loader",
+  computed: {
+    // Dynamically get the path to the animation HTML file
+    animationSrc() {
+      return '/animations/loader/RECOVER_gif.html'; // Adjust to your file location
+    }
   }
-  iframe {
-    width: 100%;
-    height: 100%;
-  }
-  </style>
+};
+</script>
+
+<style scoped>
+.animation {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+}
+
+
+</style>

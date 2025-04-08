@@ -1,31 +1,49 @@
 <template>
   <div id="app">
-    <opening-page @start="start"></opening-page>
+    <opening-page v-if="!isLoader" @start="start"></opening-page>
     <subjects-map v-if="isStart"></subjects-map>
+    <Loader v-if="isLoader">dyfujghcj</Loader>
+     <rocket v-if="isAnimation"></rocket>
   </div>
    
 
 </template>
 
 <script>
-// import Loader from '@/components/Loader.vue';
+import Loader from "@/components/Loader.vue";
+import Rocket from "@/components/Rocket.vue";
 import SubjectsMap from '@/components/subjectsMap.vue';
 import OpeningPage from '@/components/OpeningPage.vue';
+
 export default {
   name: "app",
   components: {
     OpeningPage,
-    SubjectsMap
+    SubjectsMap,
+    Loader,
+    Rocket
   },
   data() {
     return {
       isStart: false,
+      isLoader: true,
+      isAnimation: false,
     };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.isLoader = false
+    }, 1000)
   },
 
   methods: {
     start() {
-      this.isStart = true;
+      this.isAnimation = true;
+      setTimeout(() => {
+        this.isAnimation = false;
+        this.isStart = true;
+    }, 1000)
+
     }
   }
 }

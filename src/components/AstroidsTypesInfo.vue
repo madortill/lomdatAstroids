@@ -2,6 +2,9 @@
     <div id="astroids-types-info">
         <div class="info">
             <img src="@/assets/media/astroidsTypes/closeIcon.svg" class="closeBtn" @click="closeInfo" alt="">
+            <!-- <div v-for="(type, index) in types" :key="index">
+                <p class="title">{{ type[index].title }}</p>
+            </div> -->
             <div v-show="type === 'astroidBaby'">
                 <p class="title">אסטרואיד בייבי</p>
                 <p class="text">אסטרואיד ממש קטן והורס שכונות מקומיות</p>
@@ -31,7 +34,23 @@
     props: ["type"],
     data() {
       return{
-     
+        // types: [
+        //     {
+        //         "title": "אסטרואיד בייבי",
+        //         "text": "אסטרואיד ממש קטן והורס שכונות מקומיות",
+        //         "img": "/assets/media/astroidsTypes/babyAstroid.svg",
+        //     },
+        //     {
+        //         "title": "אסטרואיד נער מתבגר",
+        //         "text": "אסטרואיד שהוא דיי חרא כי הוא בכוונה מנסה להפציץ מקומות שהוא לא אוהב",
+        //         "img": "/assets/media/astroidsTypes/teenAstroid.svg",
+        //     },
+        //     {
+        //         "title": "אסטרואיד בוגר",
+        //         "text": "אסטרואיד ממש גדול שיכול להשמיד את כל כדור הארץ",
+        //         "img": "/assets/media/astroidsTypes/adultAstroid.svg",
+        //     },
+        // ]
       };
     },
     methods: {
