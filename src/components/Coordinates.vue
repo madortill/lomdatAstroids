@@ -4,6 +4,7 @@
             <p class="title">שימוש בקורדינאטות</p>
             <img src="@/assets/media/coordinates/coordinate.svg" class="coordinates" alt="">
             <p class="text">קורדינאטה</p>
+            <p class="text2">(4,5)</p>
             <img src="@/assets/media/coordinates/smokeBubbleText.svg" class="bubble" alt="">
         </div>
        
@@ -62,6 +63,13 @@
         margin-top: 0.5rem;
         margin-left: 21rem;
     }
+    .text2 {
+        font-family: "rubik";
+        color: white;
+        font-size: 1.8rem;
+        margin-top: -1.5rem;
+        margin-left: 21rem;
+    }
     @media (max-width: 370px) {
 
     .coordinates {
@@ -80,6 +88,10 @@
     .text {
         font-size: 1.6rem;
         margin-top: 0.5rem;
+        margin-left: 18rem;
+    }
+    .text2 {
+        font-size: 1.6rem;
         margin-left: 18rem;
     }
     

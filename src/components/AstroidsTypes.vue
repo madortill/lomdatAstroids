@@ -1,7 +1,7 @@
 <template>
     <div id="astroids-types">
-        <astroids-types-exercise v-show="page === 2" @toMap="backMap"></astroids-types-exercise>
-        <div v-show="page === 1">
+        <astroids-types-exercise v-if="page === 2" @toMap="backMap"></astroids-types-exercise>
+        <div v-if="page === 1">
         <astroids-types-info v-if="isOpen" id="astroids-types-info" :type="type" @close="closeInfo"></astroids-types-info>
         
         <div class="text">

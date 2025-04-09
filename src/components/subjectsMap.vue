@@ -8,13 +8,22 @@
         <div v-if="!isClosed" class="cover"></div>
             <div v-if="page === 0" class="subjects">
                 <p class="title">מפת נושאים</p>
-                <p class="title2">לחצו!</p>
+                <p class="title2">לחצו על הנושאים</p>
                 <div v-for="(text, index) in subjects" :key="index" :id="index"  :class="['img', 'img' + (index + 1), enableArr[index] ? 'abled' : 'disabled']">
                     <p :id="(index)"
                     :class="'astroid astroid' + (index + 1)"
                     @click="nextPage">
                     {{ text }}
                     </p>
+                </div>
+                <div v-show="numOfLock == 3" id="lockMsg3" class="lockMsg">
+                    הנושא לא נפתח עדיין!
+                </div>
+                <div id="lockMsg2" class="lockMsg" v-show="numOfLock == 2">
+                    הנושא לא נפתח עדיין!
+                </div>
+                <div id="lockMsg1" class="lockMsg" v-show="numOfLock == 1">
+                    הנושא לא נפתח עדיין!
                 </div>
                 
             </div>
@@ -45,7 +54,8 @@ export default {
         page: 0,
         isClosed: false,
         subjects: ["מהו אסטרואיד", "סוגי אסטרואידים", "קורדינאטות", "המשימה הסופית"],
-        enableArr: [true, false, false, false]
+        enableArr: [true, false, false, false],
+        numOfLock: -1,
       };
     },
     methods: {
@@ -57,8 +67,8 @@ export default {
         this.isClosed = true;
       },
       nextPage(event) {
-        if(this.enableArr[event.target.id])
-        if(event.target.id === "0") {
+        if(this.enableArr[event.target.id]) {
+            if(event.target.id === "0") {
             this.page = 1;
             this.enableArr[Number(event.target.id) + 1] = true;
         } else if (event.target.id === "1") {
@@ -71,6 +81,13 @@ export default {
             this.page = 4;
             this.enableArr[Number(event.target.id) + 1] = true;
         }
+        } else {
+            this.numOfLock = event.target.id;
+            setTimeout(()=> {
+                this.numOfLock = '';
+            } ,2200)
+        }
+        
       },
       backToMap() {
         this.page = 0;
@@ -132,12 +149,14 @@ export default {
     font-family: "abraham";
     color: white;
     font-size: 4.5rem;
+    text-align: center;
 }
 .title2 {
     font-family: "rubik";
     color: white;
     font-size: 2.3rem;
     margin-top: -4rem;
+    text-align: center;
 }
 .astroid {
     color: white;
@@ -198,15 +217,41 @@ export default {
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-    }
+}
 
+.lockMsg {
+    padding: 2rem;
+    background-color: #A7A7BE;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: "rubik";
+    font-weight: 600;
+    border-radius: 1rem;
+    
+}
+
+#lockMsg3{
+    position: relative;
+    top: -27rem;
+    left: 3rem;
+}
+#lockMsg2 {
+    position: relative;
+    top: -57rem;
+    right: 7rem;
+}
+#lockMsg1 {
+    position: relative;
+    top: -81rem;
+    left: 3rem;
+}
 @media (max-width: 320px) {
   .title {
-    font-size: 2.8rem;
+    font-size: 3.3rem;
   }
   .title2 {
     font-size: 2rem;
-    margin-top: -2rem;
+    margin-top: -2.5rem;
 }
   .img {
     width: 30rem;
@@ -245,6 +290,21 @@ export default {
     font-size:3rem;
     padding: 5.5rem 3.4rem;
     border-radius: 8rem;
+}
+#lockMsg3 {
+    position: relative;
+    top: -24rem;
+    left: 3rem;
+}
+#lockMsg2 {
+    position: relative;
+    top: -48rem;
+    right: 3.5rem;
+}
+#lockMsg1 {
+    position: relative;
+    top: -68.5rem;
+    left: 3rem;
 }
 }
 

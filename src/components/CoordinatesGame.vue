@@ -3,6 +3,7 @@
         <decision-screen v-if="isReady" @MoveTo="moveToGame"></decision-screen>
         <game-manager v-if="isClose && !isReady"></game-manager>
         <instructions v-if="!isClose && !isReady" class="instructions" @close="closeInstructions"></instructions>
+        <!-- <targets-squares class="targets-squares"></targets-squares> -->
     </div>
        
         
@@ -12,13 +13,15 @@
   import DecisionScreen from '@/components/DecisionScreen.vue';
   import GameManager from '@/components/GameManager.vue';
   import Instructions from '@/components/Instructions.vue';
+//   import TargetsSquares from '@/components/TargetsSquares.vue';
 
   export default {
     name: "coordinates-game",
     components: {
         DecisionScreen,
         GameManager,
-        Instructions
+        Instructions,
+        // TargetsSquares
     },
     data() {
         return {
@@ -48,6 +51,13 @@
     }
     
     .instructions {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+    }
+    .targets-squares {
         position: absolute;
         top: 50%;
         left: 50%;

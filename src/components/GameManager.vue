@@ -13,11 +13,14 @@
                 <p class="count">{{ numOfAstroids }}/5</p>
             </div>
             <div class="questions">
-                <p class="question">(3,4)</p>
-                <!-- <p v-for="(coordinate, index) in coordinatesArr" :key="index" class="bla">
-                    {{ coordinate[index] }}
-                </p> -->
-                <img src="@/assets/media/coordinatesgame/astroid.svg" alt="">
+                <!-- <p class="question">(3,4)</p> -->
+                <p class="question">
+                    {{ coordinatesArr[numOfQuestion] }}
+                </p>
+                <div>
+                    <img src="@/assets/media/coordinatesgame/astroid.svg" class="astroid" alt="">
+                </div>
+                
             </div>
             
          </div>
@@ -35,8 +38,9 @@
     },
     data() {
         return {
+            numOfQuestion: 0,
             numOfAstroids: 0,
-            coordinatesArr: ["3,4","2,6","6,4"],
+            coordinatesArr: ["(2,6)","(4,3)","(5,2)","(1,2)","(3,5)"],
         };
         
     },
@@ -112,10 +116,16 @@
         height: 2rem;
         margin-top: 3rem;
     }
-    .targets-container {
+    .row7 {
         display: flex; 
         flex-direction: row;
-        gap: 1rem;
+        gap: 2rem;
+        margin-top: -9.5rem;
+        margin-left: 1rem;
+    } */
+    /* .astroid {
+        margin-right: 5rem;
+        margin-top: 3rem;
     } */
    
     </style>
