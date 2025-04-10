@@ -1,7 +1,7 @@
 <template>
     <div id="astroid-page">
         <astroid-info v-if="num === 1" @next-page="num = 2"></astroid-info>
-        <astroids-types v-if="num === 2" @toMap="backMap" ></astroids-types>
+        <astroids-types v-if="num === 2" @toMap="backMap" @showMap="showMap" @hideMap="hide"></astroids-types>
     </div>
      
   
@@ -25,6 +25,12 @@
         backMap() {
             this.$emit("toMap");
         },
+        showMap() {
+            this.$emit("showMap");
+        },
+        hide() {
+            this.$emit("hideMap");
+        }
     }
 }
   </script>

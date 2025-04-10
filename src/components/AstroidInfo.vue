@@ -21,7 +21,7 @@
     },
     methods: {
         next() {
-            this.$emit("next-page")
+            this.$emit("next-page");
         }
     }
 }

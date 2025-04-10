@@ -1,7 +1,7 @@
 <template>
     <div id="subjects-map">
-        <img v-show="(page !== 0) && (page !== 4)" src="@/assets/media/backToMap.png" class="backToMap" @click="page = 0" alt="">
-        <astroid-page  v-if="page === 1 || page === 2" :num="page" @toMap="backToMap"></astroid-page>
+        <img v-show="(page !== 0) && (page !== 4) && (dontShow)" src="@/assets/media/backToMap.png" class="backToMap" @click="page = 0" alt="">
+        <astroid-page  v-if="page === 1 || page === 2" :num="page" @toMap="backToMap" @showMap="showMap" @hideMap="hide"></astroid-page>
         <coordinates v-if="page === 3" @toMap="backToMap"></coordinates>
         <coordinates-game v-if="page === 4"></coordinates-game>
         <ImportanceOfAstroids v-if="!isClosed" id="importanceof-astroids" @close="closeInfo"></ImportanceOfAstroids>
@@ -53,6 +53,7 @@ export default {
         // isClicked: false,
         page: 0,
         isClosed: false,
+        dontShow: true,
         subjects: ["מהו אסטרואיד", "סוגי אסטרואידים", "קורדינאטות", "המשימה הסופית"],
         enableArr: [true, false, false, false],
         numOfLock: -1,
@@ -91,6 +92,12 @@ export default {
       },
       backToMap() {
         this.page = 0;
+      },
+      showMap() {
+        this.dontShow = true;
+      },
+      hide() {
+        this.dontShow = false;
       }
     }
   };

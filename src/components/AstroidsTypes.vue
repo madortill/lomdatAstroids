@@ -58,6 +58,9 @@ import AstroidsTypesExercise from '@/components/AstroidsTypesExercise.vue';
         imgAdultAfter: "./astroidsTypes/adultAfter.svg",
       };
     },
+    mounted() {
+        this.$emit("hideMap");
+    },
     methods: {
         openInfo(event) {
             if(event.target.tagName === "IMG") {
@@ -81,6 +84,7 @@ import AstroidsTypesExercise from '@/components/AstroidsTypesExercise.vue';
         },
         next() {
             this.page = 2;
+            this.$emit("showMap");
         },
         backMap() {
             this.$emit("toMap");
@@ -106,7 +110,7 @@ import AstroidsTypesExercise from '@/components/AstroidsTypesExercise.vue';
         flex-direction: column;
         align-items: center;
         text-align: center;
-        margin-top: 5.7rem;
+        margin-top: 3rem;
         color: white;
     }
     .main-title {

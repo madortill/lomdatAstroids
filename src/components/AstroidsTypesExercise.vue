@@ -9,7 +9,9 @@
                 </div>
                 <p v-show="isRight === 1" class="outcome right">כל הכבודדד</p>
                 <p v-show="isRight === 2" class="outcome wrong">אולי בפעם הבאה...</p>
-                <p class="sentence">{{ characterArr[randomNum].text }}</p>
+                <p v-show="countRight === 3" class="text">כל הכבוד! אפשר לחזור למפה</p>
+                <p class="sentence">{{ characterArr[num].text }}</p>
+                
                 
             </div>
                
@@ -59,13 +61,8 @@
         draged: "",
         isRight: 0,
         countRight: 0,
-        randomNum: -1,
+        num: 0,
         characterArr: [
-            {
-                text: "הורס שכונות מקומיות",
-                id: "astroidBaby"
-            },
-
             {
                 text: "מפציץ מקומות שהוא לא אוהב",
                 id: "astroidTeen"
@@ -74,51 +71,43 @@
             {
                 text: "יכול להשמיד את כדור הארץ",
                 id: "astroidAdult"
+            },
+
+            {
+                text: "הורס שכונות מקומיות",
+                id: "astroidBaby"
             }, 
         ]
       };
-    },
-    created() {
-        this.drawNumber();
     },
     methods: {
         backMap() {
             this.$emit("toMap");
         },
-        drawNumber() {
-            this.randomNum = Math.floor(Math.random() * (this.characterArr.length - 1));
-        },
+      
         checkIfRight(event) {
             if(event.target.tagName === "IMG") {
-                if(this.randomNum <= this.characterArr.length -1) {
-                    if(this.characterArr[this.randomNum].id == event.target.id) {
-                        this.isRight = 1
+                if(this.characterArr[this.num].id == event.target.id) {
+                    this.isRight = 1;
+                    setTimeout(() => {
+                        this.isRight = 0;
                         this.countRight++
-                        this.characterArr.splice(this.randomNum, 1);
-                        console.log(this.characterArr);
-                        setTimeout( ()=> {
-                            this.isRight = 0
-                            if(this.countRight > 2) {
-                                this.drawNumber();
-                            }
-                        }, 2300);
-                    } else {
-                        this.isRight = 2
-                        setTimeout( ()=> {
-                            this.isRight = 0
-                            this.drawNumber();
-                        }, 2300);
-                    }
-            } else {
-                this.drawNumber();
+                        if(this.num < 2) {
+                            this.num++;
+                        }
+                    }, 2300);
+                } else {
+                    this.isRight = 2
+                    setTimeout(() => {
+                        this.isRight = 0
+                    }, 2300)
+                }
             }
         }
-            
-        }
-       
-      }
     }
-
+}
+      
+               
 
 
 
@@ -220,6 +209,14 @@
     .wrong {
         color: white;
         background-color: rgb(119, 20, 20);
+    }
+    .text {
+        color: white;
+        font-size: 2rem;
+        font-family: "rubik";
+        background-color: #A7A7BE;
+        padding: 1.5rem;
+        border-radius: 1rem;
     }
 
  
