@@ -113,6 +113,7 @@ export default {
 .img {
     width: 35rem;  
     height: 30rem;
+    margin-top: -2rem;
     /* padding: 0;  */
     color: white;
 
@@ -126,17 +127,17 @@ export default {
 .img2 {
     background-image: url(@/assets/media/subjectMap/subj2.svg);
     background-size: 100% 100%;
-    margin-bottom: -3rem;
+    margin-bottom: -5rem;
 }
 .img3 {
     background-image: url(@/assets/media/subjectMap/subj3.svg);
     background-size: 100% 100%;
-    margin-bottom: -3rem;
+    margin-bottom: -5rem;
 }
 .img4 {
     background-image: url(@/assets/media/subjectMap/subj4.svg);
     background-size: 100% 100%;
-    margin-bottom: -3rem;
+    margin-bottom: -2rem;
 }
 .subjects {
     display: flex;
