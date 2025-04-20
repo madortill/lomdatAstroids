@@ -113,27 +113,30 @@ export default {
 .img {
     width: 35rem;  
     height: 30rem;
-    margin: 0; 
-    padding: 0; 
+    /* padding: 0;  */
     color: white;
 
 }
 .img1 {
     background-image: url(@/assets/media/subjectMap/subj1.svg);
     background-size: 100% 100%;
+    margin-bottom: -3rem;
     
 }
 .img2 {
     background-image: url(@/assets/media/subjectMap/subj2.svg);
     background-size: 100% 100%;
+    margin-bottom: -3rem;
 }
 .img3 {
     background-image: url(@/assets/media/subjectMap/subj3.svg);
     background-size: 100% 100%;
+    margin-bottom: -3rem;
 }
 .img4 {
     background-image: url(@/assets/media/subjectMap/subj4.svg);
     background-size: 100% 100%;
+    margin-bottom: -3rem;
 }
 .subjects {
     display: flex;
