@@ -78,12 +78,12 @@
         check(event) {
             if (event.target.id === this.coordinatesArr[this.numOfQuestion]) {
                 this.isRight = true;
-            //     setTimeout(() => {
-            //         this.isRight = false
-            //         if(this.numOfAstroids === 5) {
-            //         this.$emit("end-game")
-            // }
-            //     }, 2000);
+                setTimeout(() => {
+                    this.isRight = false
+                    if(this.numOfAstroids === 5) {
+                    this.$emit("end-game")
+            }
+                }, 2000);
                 this.coordinatesArr.splice(this.numOfQuestion, 1);
                 console.log(this.coordinatesArr);
                 this.numOfQuestion = Math.floor(Math.random() * this.coordinatesArr.length);
