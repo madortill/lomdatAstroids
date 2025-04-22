@@ -32,7 +32,9 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
-        margin: 0;
+        margin-top: -10rem;
+        margin-right: 4rem;
+        
   }
   
   

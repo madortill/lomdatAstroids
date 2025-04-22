@@ -4,14 +4,14 @@
             <p class="title">שימוש בקורדינאטות</p>
             <img src="@/assets/media/coordinates/coordinate.svg" class="coordinates" alt="">
             <p class="text">קורדינאטה</p>
-            <p class="text2">(4,5)</p>
+            <p class="text2">(5,4)</p>
             <div class="smokeBubble">
                 <p class="content">
                     {{ textArr[slide] }}
                 </p>
                 <img src="@/assets/media/coordinates/smokeBubble.svg" class="bubble" alt="">
                 <div class="arrows">
-                    <img v-show="slide < 2" src="@/assets/media/astroidsTypesExercise/arrow.svg" @click="slide++" class="left-arrow" alt="">
+                    <img v-show="slide < 3" src="@/assets/media/astroidsTypesExercise/arrow.svg" @click="slide++" class="left-arrow" alt="">
                     <img v-show="slide > 0" src="@/assets/media/astroidsTypesExercise/arrow.svg" @click="slide--" class="right-arrow" alt="">
                 </div>
             </div>
@@ -32,7 +32,7 @@
     data() {
         return {
             slide: 0,
-            textArr: ["זאת רשת קורדינאטות, בעזרתה אתם יכולים לכוון ולפגוע באסטרואיד בצורה הכי מדוייקת וכך לפוצץ אותו.", "תחנת השיגור היא האחראית לחישוב קואורדינטות שבהן האסטרואיד נמצא בכל רגע נתון.", "תפקידכם הוא לכוון את משגר הפצצות לכיוון האסטרואיד לפי הקורדינאטות שקיבלתם מתחנת השיגור."],
+            textArr: ["זאת רשת קורדינאטות, בעזרתה אתם יכולים לכוון ולפגוע באסטרואיד בצורה הכי מדוייקת וכך לפוצץ אותו.", "תחנת השיגור היא האחראית לחישוב קואורדינטות שבהן האסטרואיד נמצא בכל רגע נתון.", "תפקידכם הוא לכוון את משגר הפצצות לכיוון האסטרואיד לפי הקורדינאטות שקיבלתם מתחנת השיגור.", "הריבוע שצריכים לפגוע בו הוא הריבוע שהנקודה היא הפינה השמאלית העליונה שלו."],
         }
     },
     methods: {

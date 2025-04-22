@@ -2,8 +2,8 @@
     <div id="game-manager">
         <lose-game v-if="isLose" @restart-game="restartGame"></lose-game>
         <div v-if="!isLose">
-        <wrong v-show="isWrong"></wrong>
-         <explosion v-show="isRight"></explosion>
+        <wrong v-show="isWrong" class="wrong"></wrong>
+         <explosion v-show="isRight" class="right"></explosion>
         <div class="board">
             <div class="lifes">
                 <p>מה שנותר מכדור הארץ:</p>
@@ -232,6 +232,14 @@
         font-size: 1.3rem;
         margin-right: 25rem;
         margin-top: -2rem;
+    }
+    .wrong {
+        position: absolute;
+        z-index: 3;
+    }
+    .right {
+        position: absolute;
+        z-index: 3;
     }
 
    

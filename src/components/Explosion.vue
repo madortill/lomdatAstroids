@@ -32,14 +32,8 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
-        margin-left: 3rem;
-  }
-  .correct {
-    color: white;
-    font-family: "abraham";
-    font-size: 2rem;
-    top: -10rem;
-    left: 10rem;
+        margin-top: -10rem;
+        margin-right: 3rem;
   }
   
   
