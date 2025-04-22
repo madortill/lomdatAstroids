@@ -93,12 +93,11 @@
                 this.isWrong = true;
                 setTimeout(() => {
                     this.isWrong = false;
+                    if(this.numOfWrong === 3) {
+                        this.isLose = true;
+                    }
                 }, 900);
                 this.numOfWrong++;
-            }
-            if(this.numOfWrong === 3) {
-                this.isLose = true;
-
             }
             
         },
@@ -210,7 +209,7 @@
     /* border-style: solid; */
     }
     .squre {
-        border: solid, white, 2px;
+        border: 2px solid white;
         padding: 2rem;
         padding-top: 3rem;
     }
