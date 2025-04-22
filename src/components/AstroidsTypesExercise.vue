@@ -10,6 +10,7 @@
                 <p v-show="isRight === 1" class="outcome right">כל הכבודדד</p>
                 <p v-show="isRight === 2" class="outcome wrong">אולי בפעם הבאה...</p>
                 <p v-show="countRight === 3" class="text">כל הכבוד! אפשר לחזור למפה</p>
+                <img v-show="countRight === 3" src="@/assets/media/astroidsTypesExercise/arrowMap.png" class="arrowMap" alt="arrowMap">
                 <p class="sentence">{{ characterArr[num].text }}</p>
                 
                 
@@ -218,6 +219,24 @@
         padding: 1.5rem;
         border-radius: 1rem;
     }
-
+    .arrowMap {
+        width: 4rem;
+        transform: rotate(90deg);
+        position: relative;
+        bottom: 47rem;
+        left: 1.5rem;
+        animation: arrowAnimation 1.5s infinite ease;
+    }
+    @keyframes arrowAnimation {
+        0% {
+            left: 1.5rem;
+        }
+        50% {
+            left: 3rem;
+        }
+        100% {
+            left: 1.5rem;
+        }
+    }
  
     </style>

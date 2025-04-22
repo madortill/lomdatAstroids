@@ -1,9 +1,9 @@
 <template>
     <div id="coordinates-game">
         <decision-screen v-if="isReady" @MoveTo="moveToGame"></decision-screen>
-        <game-manager v-if="isClose && !isReady"></game-manager>
+        <game-manager v-if="isClose && !isReady && isEnd" @end-game="endGame" @lose-screen="openLoseScreen"></game-manager>
         <instructions v-if="!isClose && !isReady" class="instructions" @close="closeInstructions"></instructions>
-        <!-- <targets-squares class="targets-squares"></targets-squares> -->
+        
     </div>
        
         
@@ -13,7 +13,7 @@
   import DecisionScreen from '@/components/DecisionScreen.vue';
   import GameManager from '@/components/GameManager.vue';
   import Instructions from '@/components/Instructions.vue';
-//   import TargetsSquares from '@/components/TargetsSquares.vue';
+
 
   export default {
     name: "coordinates-game",
@@ -21,12 +21,12 @@
         DecisionScreen,
         GameManager,
         Instructions,
-        // TargetsSquares
     },
     data() {
         return {
             isReady: true,
             isClose: false,
+            isEnd: true,
         };
     },
     methods: {
@@ -35,7 +35,11 @@
         },
         closeInstructions() {
             this.isClose = true;
-        }
+        },
+        endGame() {
+            this.isEnd = false;
+            this.$emit("end-game")
+        },
     }
 }
   </script>

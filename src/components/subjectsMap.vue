@@ -3,7 +3,7 @@
         <img v-show="(page !== 0) && (page !== 4) && (dontShow)" src="@/assets/media/backToMap.png" class="backToMap" @click="page = 0" alt="">
         <astroid-page  v-if="page === 1 || page === 2" :num="page" @toMap="backToMap" @showMap="showMap" @hideMap="hide"></astroid-page>
         <coordinates v-if="page === 3" @toMap="backToMap"></coordinates>
-        <coordinates-game v-if="page === 4"></coordinates-game>
+        <coordinates-game v-if="page === 4" @end-game="endGame"></coordinates-game>
         <ImportanceOfAstroids v-if="!isClosed" id="importanceof-astroids" @close="closeInfo"></ImportanceOfAstroids>
         <div v-if="!isClosed" class="cover"></div>
             <div v-if="page === 0" class="subjects">
@@ -40,6 +40,7 @@ import Coordinates from '@/components/Coordinates.vue';
 import CoordinatesGame from '@/components/CoordinatesGame.vue';
 export default {
     name: "app",
+    props: ["allOpen"],
     components: {
         AstroidPage,
         ImportanceOfAstroids,
@@ -50,13 +51,13 @@ export default {
     data() {
       return{
         isStart: false,
-        // isClicked: false,
         page: 0,
         isClosed: false,
         dontShow: true,
         subjects: ["מהו אסטרואיד", "סוגי אסטרואידים", "קורדינאטות", "המשימה הסופית"],
-        enableArr: [true, false, false, false],
+        enableArr: [true, false, false, true],
         numOfLock: -1,
+        enterAllready: "",
       };
     },
     methods: {
@@ -66,6 +67,13 @@ export default {
       },
       closeInfo() {
         this.isClosed = true;
+        this.enterAllready = this.allOpen;
+        if (this.enterAllready === 1) {
+            this.enableArr[1] = true;
+            this.enableArr[2] = true;
+            this.enableArr[3] = true;
+        }
+        this.enableArr
       },
       nextPage(event) {
         if(this.enableArr[event.target.id]) {
@@ -98,7 +106,10 @@ export default {
       },
       hide() {
         this.dontShow = false;
-      }
+      },
+      endGame() {
+            this.$emit("end-game")
+        }
     }
   };
 </script>
@@ -248,12 +259,12 @@ export default {
 }
 #lockMsg2 {
     position: relative;
-    top: -57rem;
+    top: -48rem;
     right: 7rem;
 }
 #lockMsg1 {
     position: relative;
-    top: -81rem;
+    top: -65rem;
     left: 3rem;
 }
 @media (max-width: 320px) {
@@ -309,12 +320,12 @@ export default {
 }
 #lockMsg2 {
     position: relative;
-    top: -48rem;
+    top: -38rem;
     right: 3.5rem;
 }
 #lockMsg1 {
     position: relative;
-    top: -68.5rem;
+    top: -53rem;
     left: 3rem;
 }
 }
