@@ -131,6 +131,23 @@
         font-size: 1.6rem;
         margin-left: 18rem;
     }
+    .content {
+        width: 19rem;
+        position: relative;
+        top: 12rem;
+        right: 4rem;
+        font-size: 1.4rem;
+    }
+    .left-arrow {
+        position: relative;
+        top: -9rem;
+        right: 18rem;
+    }
+    .right-arrow {
+        position: relative;
+        top: -9rem;
+        right: 6rem;
+    }
     
     }
     

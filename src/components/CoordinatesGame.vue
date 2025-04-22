@@ -1,7 +1,7 @@
 <template>
     <div id="coordinates-game">
         <decision-screen v-if="isReady" @MoveTo="moveToGame"></decision-screen>
-        <game-manager v-if="isClose && !isReady && isEnd" @end-game="endGame" @lose-screen="openLoseScreen"></game-manager>
+        <game-manager v-if="isClose && !isReady && isEnd" @end-game="endGame" @lose-screen="openLoseScreen" @openInst="openInstractions"></game-manager>
         <instructions v-if="!isClose && !isReady" class="instructions" @close="closeInstructions"></instructions>
         
     </div>
@@ -40,6 +40,10 @@
             this.isEnd = false;
             this.$emit("end-game")
         },
+        openInstractions() {
+            this.isReady = false;
+            this.isClose = false;
+        }
     }
 }
   </script>

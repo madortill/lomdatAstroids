@@ -11,6 +11,7 @@
                 <img v-show="numOfWrong <= 1" src="@/assets/media/coordinatesgame/lessWholeEarth.svg" class="img" alt="LesswholeEarth">
                 <img v-show="numOfWrong <= 2" src="@/assets/media/coordinatesgame/littleFromEarth.svg" class="img" alt="littleFromEarth">
             </div>
+            <p class="btn" @click="openInstractions">להוראות</p>
             <!-- <img src="@/assets/media/coordinatesgame/board.svg" class="boardImg" alt="board"> -->
              <div class="numbersRow">
                 <p v-for="(num, index) in ROWS" :key="index"> {{ index }}</p>
@@ -110,6 +111,9 @@
             this.isLose = false;
             this.coordinatesArr = ["(2,5)","(1,3)","(4,2)","(1,2)","(3,2)", "(4,4)", "(3,5)", "(0,3)","(0,4)","(3,3)", "(1,4)", "(0,0)", "(3,0)", "(2,1)"];
             this.boxes = ["1","(3,0)", "3", "4", "(0,0)", "6", "7", "(2,1)", "9", "10", "(4,2)", "(3,2)", "13", "(1,2)", "15" ,"16", "(3,3)" ,"18", "(1,3)", "(0,3)" , "(4,4)", "22", "23", "(1,4)", "(0,4)", "26" ,"(3,5)", "(2,5)", "30", "31"];
+        },
+        openInstractions() {
+            this.$emit("openInst")
         }
     }
 }
@@ -221,6 +225,7 @@
         font-family: "rubik";
         font-weight: 550;
         font-size: 1.3rem;
+        margin-top: -1.5rem;
     }
     .numbersCol {
         display: flex;
@@ -240,6 +245,16 @@
     .right {
         position: absolute;
         z-index: 3;
+    }
+    .btn {
+        background-color: #A7A7BE;
+        padding: 1rem;
+        font-family: "rubik";
+        font-weight: 600;
+        font-size: 1.5rem;
+        border-radius: 2rem;
+        margin-left: 16rem;
+        margin-top: -1rem;
     }
 
    
