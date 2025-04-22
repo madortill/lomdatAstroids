@@ -107,10 +107,10 @@ html {
 }
 @font-face {
   font-family: "rubik";
-  src: url("./Rubik-Regular.ttf");
+  src: url("@/assets/fonts/Rubik-Regular.ttf");
 }
 @font-face {
   font-family: "abraham";
-  src: url("./Abraham-Regular.ttf");
+  src: url("@/assets/fonts/Abraham-Regular.ttf");
 }
 </style>
