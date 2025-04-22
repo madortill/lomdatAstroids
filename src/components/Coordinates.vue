@@ -5,7 +5,17 @@
             <img src="@/assets/media/coordinates/coordinate.svg" class="coordinates" alt="">
             <p class="text">קורדינאטה</p>
             <p class="text2">(4,5)</p>
-            <img src="@/assets/media/coordinates/smokeBubbleText.svg" class="bubble" alt="">
+            <div class="smokeBubble">
+                <p class="content">
+                    {{ textArr[slide] }}
+                </p>
+                <img src="@/assets/media/coordinates/smokeBubble.svg" class="bubble" alt="">
+                <div class="arrows">
+                    <img v-show="slide < 2" src="@/assets/media/astroidsTypesExercise/arrow.svg" @click="slide++" class="left-arrow" alt="">
+                    <img v-show="slide > 0" src="@/assets/media/astroidsTypesExercise/arrow.svg" @click="slide--" class="right-arrow" alt="">
+                </div>
+            </div>
+            
         </div>
        
         
@@ -20,7 +30,10 @@
     components: {
     },
     data() {
-
+        return {
+            slide: 0,
+            textArr: ["זאת רשת קורדינאטות, בעזרתה אתם יכולים לכוון ולפגוע באסטרואיד בצורה הכי מדוייקת וכך לפוצץ אותו.", "תחנת השיגור היא האחראית לחישוב קואורדינטות שבהן האסטרואיד נמצא בכל רגע נתון.", "תפקידכם הוא לכוון את משגר הפצצות לכיוון האסטרואיד לפי הקורדינאטות שקיבלתם מתחנת השיגור."],
+        }
     },
     methods: {
         backMap() {
@@ -69,6 +82,30 @@
         font-size: 1.8rem;
         margin-top: -1.5rem;
         margin-left: 21rem;
+    }
+    .smokeBubble {
+        margin-top: -10rem;
+    }
+    .content {
+        font-family: "rubik";
+        color: black;
+        font-size: 1.5rem;
+        text-align: center;
+        width: 20rem;
+        position: relative;
+        top: 14rem;
+        right: 7rem;
+    }
+    .left-arrow {
+        position: relative;
+        top: -12rem;
+        right: 22rem;
+    }
+    .right-arrow {
+        position: relative;
+        top: -12rem;
+        right: 8rem;
+        transform: rotate(180deg);
     }
     @media (max-width: 370px) {
 

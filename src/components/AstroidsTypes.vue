@@ -22,8 +22,9 @@
                 <img :src="isPressedAdult ? imgAdult : imgAdultAfter" id="astroidAdult" class="img" alt="babyAstroidImg">
                 <p class="adultText">אסטרואיד בוגר</p>
             </div>
+            <img v-show="isNext" src="@/assets/media/next.svg" class="next" @click="next" alt="">
         </div>
-        <img v-show="isNext" src="@/assets/media/next.svg" class="next" @click="next" alt="">
+       
         </div>
     </div>
      
@@ -143,15 +144,14 @@ import AstroidsTypesExercise from '@/components/AstroidsTypesExercise.vue';
         font-family: "rubik";
     }
     .astroidBaby {
-        margin-right: 17rem;
-        margin-top: -2rem;
+        margin-left: 13rem;
     }
     .astroidTeen {
-        margin-left: 17rem;
+        margin-right: 15rem;
         margin-top: -4rem;
     }
     .astroidAdult {
-        margin-right: 12rem;
+        margin-left: 13rem;
         margin-top: -3rem;
     }
     .babyText {
@@ -171,8 +171,7 @@ import AstroidsTypesExercise from '@/components/AstroidsTypesExercise.vue';
         z-index: 1;
     }
     .next {
-        display: inline;
-        margin-right: 1%;
+        margin-right: 15rem;
         margin-top: -10rem;
     }
    

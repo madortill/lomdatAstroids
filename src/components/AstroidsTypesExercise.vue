@@ -145,13 +145,9 @@
     }
     /* .left-arrow {
         position: relative;
-        left: 4rem;
-        bottom: 1rem;
     }
     .right-arrow {
         position: relative;
-        right: 1rem;
-        bottom: 4rem;
         transform: rotate(180deg);
     } */
     .astroids {

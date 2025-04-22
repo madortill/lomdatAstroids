@@ -4,10 +4,9 @@
       <div class="animation">
         <iframe
           :src="animationSrc"
-          width="100%" 
-          height="100%"
           frameborder="0"
           allowfullscreen
+          class="rocket"
         ></iframe>
       </div>
     </div>
@@ -38,5 +37,8 @@
   iframe {
     width: 1500%;
     height: 100%;
+  }
+  .rocket {
+      position: relative;
   }
   </style>

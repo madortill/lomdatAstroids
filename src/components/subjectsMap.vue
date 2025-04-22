@@ -55,7 +55,7 @@ export default {
         isClosed: false,
         dontShow: true,
         subjects: ["מהו אסטרואיד", "סוגי אסטרואידים", "קורדינאטות", "המשימה הסופית"],
-        enableArr: [true, false, false, true],
+        enableArr: [true, false, false, false],
         numOfLock: -1,
         enterAllready: "",
       };
