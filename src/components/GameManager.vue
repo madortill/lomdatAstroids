@@ -69,8 +69,8 @@
             isLose: false,
             coordinatesArr: ["(2,5)","(1,3)","(4,2)","(1,2)","(3,2)", "(4,4)", "(3,5)", "(0,3)","(0,4)","(3,3)", "(1,4)", "(0,0)", "(3,0)", "(2,1)"],
             NUM_OF_SQURE: 30,
-            ROWS: ["1","2", "3", "4", "5", "6"],
-            COLS: ["1","2", "3", "4", "5", "6", "7"],
+            ROWS: ["1","2", "3", "4", "5"],
+            COLS: ["1","2", "3", "4", "5", "6"],
             boxes: ["1","(3,0)", "3", "4", "(0,0)", "6", "7", "(2,1)", "9", "10", "(4,2)", "(3,2)", "13", "(1,2)", "15" ,"16", "(3,3)" ,"18", "(1,3)", "(0,3)" , "(4,4)", "22", "23", "(1,4)", "(0,4)", "26" ,"(3,5)", "(2,5)", "30", "31"],
         };
         
@@ -205,7 +205,7 @@
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     color: white;
     border: solid, white, 2px;
-    margin-top: -33.8rem;
+    margin-top: -32.5rem;
     z-index: 2;
     /* grid-gap: 2rem 2rem; */
     /* justify-items: center; */
@@ -221,7 +221,7 @@
         display: flex;
         flex-direction: row-reverse;
         color: white;
-        gap: 3.5rem;
+        gap: 3.6rem;
         font-family: "rubik";
         font-weight: 550;
         font-size: 1.3rem;
@@ -231,12 +231,11 @@
         display: flex;
         flex-direction: column;
         color: white;
-        gap: 1.1rem;
+        gap: 1.5rem;
         font-family: "rubik";
         font-weight: 550;
         font-size: 1.3rem;
         margin-right: 25rem;
-        margin-top: -2rem;
     }
     .wrong {
         position: absolute;
