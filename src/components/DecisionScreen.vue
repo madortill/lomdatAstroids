@@ -3,7 +3,7 @@
         <div class="content">
             <p class="text">אוי לא! אסטרואידים מתקרבים במהירות לכדור הארץ! מקווים מאוד שלמדתם כמו שצריך כי אתם היחידים שיכולים לעצור אותם!</p>
             <p class="forwardBtn" @click="MoveTo">למשימה!</p>
-            <p class="backBtn" @click="MoveTo">למעבר נוסף על החומר...</p>
+            <p class="backBtn" @click="backTo">למעבר נוסף על החומר...</p>
         </div>
        
     </div>
@@ -22,6 +22,9 @@
     methods: {
         MoveTo() {
             this.$emit("MoveTo");
+        },
+        backTo() {
+            this.$emit("backTo");
         }
     }
 }

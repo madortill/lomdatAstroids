@@ -1,6 +1,6 @@
 <template>
     <div id="coordinates-game">
-        <decision-screen v-if="isReady" @MoveTo="moveToGame"></decision-screen>
+        <decision-screen v-if="isReady" @MoveTo="moveToGame" @backTo="backToStudy"></decision-screen>
         <game-manager v-if="isClose && !isReady && isEnd" @end-game="endGame" @lose-screen="openLoseScreen" @openInst="openInstractions"></game-manager>
         <instructions v-if="!isClose && !isReady" class="instructions" @close="closeInstructions"></instructions>
         
@@ -32,6 +32,10 @@
     methods: {
         moveToGame() {
             this.isReady = false;
+        },
+        backToStudy() {
+            this.$emit("backTo"); 
+            console.log("hi");
         },
         closeInstructions() {
             this.isClose = true;
