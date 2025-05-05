@@ -2,7 +2,8 @@
     <div id="decision-screen">
         <div class="content">
             <p class="text">אוי לא! אסטרואידים מתקרבים במהירות לכדור הארץ! מקווים מאוד שלמדתם כמו שצריך כי אתם היחידים שיכולים לעצור אותם!</p>
-            <p class="btn" @click="MoveTo">למשימה!</p>
+            <p class="forwardBtn" @click="MoveTo">למשימה!</p>
+            <p class="backBtn" @click="MoveTo">למעבר נוסף על החומר...</p>
         </div>
        
     </div>
@@ -49,14 +50,28 @@
         padding: 1rem 4.5rem;
         line-height: 1.5;
     }
-    .btn {
+    .forwardBtn {
         font-family: "abraham";
-        font-size: 2.5rem;
+        font-size: 2rem;
         background-color: #A7A7BE;
-        padding: 2rem 2rem;
+        padding: 1.5rem 1rem;
         border-radius: 1.5rem;
+        margin-left: 13rem;
     }
-    .btn:active {
+    .forwardBtn:active {
+        background-color: #9494aa;
+    }
+    .backBtn {
+        font-family: "abraham";
+        font-size: 1.8rem;
+        background-color: #A7A7BE;
+        padding: 1rem 1rem;
+        width: 10rem;
+        border-radius: 1.5rem;
+        margin-top: -8rem;
+        margin-right: 11.5rem;
+    }
+    .backBtn:active {
         background-color: #9494aa;
     }
    

@@ -25,6 +25,9 @@
                 <div id="lockMsg1" class="lockMsg" v-show="numOfLock == 1">
                     הנושא לא נפתח עדיין!
                 </div>
+                <!-- <div>
+                    <p>בטוחים שסיימתם ללמוד ואתם מוכנים למשחק? לא תוכלו לחזור אחורה</p>
+                </div> -->
                 
             </div>
            
@@ -55,7 +58,7 @@ export default {
         isClosed: false,
         dontShow: true,
         subjects: ["מהו אסטרואיד", "סוגי אסטרואידים", "קורדינאטות", "המשימה הסופית"],
-        enableArr: [true, false, false, false],
+        enableArr: [true, false, false, true],
         numOfLock: -1,
         enterAllready: "",
       };
@@ -87,6 +90,7 @@ export default {
             this.page = 3;
             this.enableArr[Number(event.target.id) + 1] = true;
         } else {
+
             this.page = 4;
             this.enableArr[Number(event.target.id) + 1] = true;
         }
