@@ -25,7 +25,7 @@
                 </div>
             </div>
             <div class="astroids-count">
-                <p>אסטואידים שפוצצו</p>
+                <p>אסטרואידים שפוצצו</p>
                 <p class="count">{{ numOfAstroids }}/5</p>
             </div>
             <div class="questions">
